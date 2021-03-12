@@ -104,7 +104,9 @@ export default function Card({ z, data }) {
         setValue(value);
     };
 
-    const handleStart = (e) => {};
+    const handleStart = (e) => {
+        e.preventDefault();
+    };
 
     const handleDrag = (e, data) => {
         setPosition({ x: data.x, y: 0 });

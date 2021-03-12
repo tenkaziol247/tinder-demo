@@ -6,7 +6,6 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        listStyle: 'none',
     },
     item: {
         position: 'relative',
@@ -45,12 +44,12 @@ export default function Toolbar({ value = 0, children, handleChange }) {
             return (
                 <Box
                     key={ind}
-                    component='li'
                     className={[
                         classes.item,
                         value === ind ? classes.itemActive : '',
                     ].join(' ')}
                     onClick={() => handleChange(ind)}
+                    onTouchStart={() => handleChange(ind)}
                 >
                     {ele}
                 </Box>
@@ -58,9 +57,5 @@ export default function Toolbar({ value = 0, children, handleChange }) {
         });
     };
 
-    return (
-        <Box className={classes.root} component='ul'>
-            {renderItems()}
-        </Box>
-    );
+    return <Box className={classes.root}>{renderItems()}</Box>;
 }
