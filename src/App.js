@@ -3,6 +3,7 @@ import {
     Container,
     createMuiTheme,
     makeStyles,
+    Paper,
     ThemeProvider,
 } from '@material-ui/core';
 import { createContext, useEffect, useState } from 'react';
@@ -40,9 +41,14 @@ const useStyles = makeStyles((theme) => ({
         overflow: 'hidden',
     },
     container: {
-        height: 500,
+        height: 520,
         display: 'flex',
         flexDirection: 'column',
+    },
+    paper: {
+        flex: 1,
+        borderRadius: 8,
+        backgroundColor: theme.palette.common.white,
     },
     skeleton: {
         position: 'absolute',
@@ -186,7 +192,7 @@ function App() {
                                 data={['Swipe now', 'Favourite']}
                                 handleChange={handleTabChange}
                             />
-                            <Box flex={1} bgcolor='white' borderRadius={8}>
+                            <Paper elevation={2} className={classes.paper}>
                                 <Box
                                     display={
                                         tabCurrent === 0 ? 'block' : 'none'
@@ -220,7 +226,7 @@ function App() {
                                         }
                                     />
                                 </Box>
-                            </Box>
+                            </Paper>
                         </Box>
                     </Container>
                 </Box>

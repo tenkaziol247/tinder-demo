@@ -1,4 +1,4 @@
-import { Box, makeStyles, Paper, Typography } from '@material-ui/core';
+import { Box, makeStyles, Typography } from '@material-ui/core';
 import React, { useContext, useRef, useState } from 'react';
 import PermIdentityIcon from '@material-ui/icons/PermIdentity';
 import ListAltIcon from '@material-ui/icons/ListAlt';
@@ -19,8 +19,6 @@ const useStyles = makeStyles((theme) => ({
         position: 'absolute',
         top: 0,
         left: 0,
-        right: 0,
-        bottom: 0,
         zIndex: (props) => 100 - props.z,
         transition: 'all 0.3s ease-out',
         display: 'flex',
@@ -166,7 +164,7 @@ export default function Card({ z, data }) {
             onDrag={handleDrag}
             onStop={handleStop}
         >
-            <Paper elevation={1} className={classes.card} ref={nodeRef}>
+            <Box className={classes.card} ref={nodeRef}>
                 <Box className={classes.like} display={like ? 'block' : 'none'}>
                     Like
                 </Box>
@@ -201,7 +199,7 @@ export default function Card({ z, data }) {
                         <LockIcon fontSize='large' />
                     </Toolbar>
                 </Box>
-            </Paper>
+            </Box>
         </Draggable>
     );
 }

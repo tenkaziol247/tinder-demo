@@ -15,7 +15,10 @@ import React from 'react';
 const useStyles = makeStyles((theme) => ({
     root: {
         padding: 8,
+        height: 470,
+        overflowY: 'auto',
     },
+    list: {},
     listItemText: {
         '& > .MuiListItemText-primary': {
             textTransform: 'capitalize',
@@ -52,7 +55,9 @@ export default function FavouriteList({ data, removeFarouriteItem }) {
 
     return (
         <Box className={classes.root}>
-            <List dense>{renderFavouriteItem()}</List>
+            <List dense className={classes.list}>
+                {renderFavouriteItem()}
+            </List>
         </Box>
     );
 }
