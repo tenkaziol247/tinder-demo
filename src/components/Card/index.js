@@ -85,7 +85,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Card({ z, data }) {
-    const { userName, picture, name, gender, location, phone } = data;
+    const { username, picture, name, gender, location, phone } = data;
 
     const [value, setValue] = useState(0);
     const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -187,7 +187,7 @@ export default function Card({ z, data }) {
                         {renderContentItem(1, 'My gender is', gender)}
                         {renderContentItem(2, 'My address is', location.street)}
                         {renderContentItem(3, 'My phone number is', phone)}
-                        {renderContentItem(4, 'My account is', userName)}
+                        {renderContentItem(4, 'My account is', username)}
                     </Box>
                 </Box>
                 <Box className={classes.toolbar}>
